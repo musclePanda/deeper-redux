@@ -18,7 +18,8 @@
 
  ![运行机制](./src/redux.jpg)
 
-    1.页面发出个事件，比如说一个点击事件，或者表单提交的事件，发出一个类似axios请求，就是store.dispatch（ 商店，仓库发出，派遣 ），传入一个对象，里面必有的一个type参数，type的值是为了在store那里匹配相应的选项，然后在做相应的修改。后面是多个参数，如果没有可不添加，redux管后面可选的参数叫做<em>action</em>。
+    1.页面发出个事件，比如说一个点击事件，或者表单提交的事件，发出一个类似axios请求，就是store.dispatch（ 商店，仓库发出，派遣 ），传入一个对象，里面<br>
+    必有的一个type参数，type的值是为了在store那里匹配相应的选项，然后在做相应的修改。后面是多个参数，如果没有可不添加，redux管后面可选的参数叫做<em>action</em>。
  ---
 ```ruby
     handleSubmit(e){
@@ -36,7 +37,8 @@
     </form>
 
 ```
-    2.好了请求发完啦，开始接收做处理啦。就这到了reducer啦，reducer是用来接收参数和处理参数，再返回修改后的树形结构。这里需要注意的是不能修改state，不能返回修改后的state，返回啦也没效果。（好几次都是这里出毛病）用了switch 语句来匹配请求的type值，修改后再返回，强调不能返回修改后的state。有两种办法
+    2.好了请求发完啦，开始接收做处理啦。就这到了reducer啦，reducer是用来接收参数和处理参数，再返回修改后的树形结构。这里需要注意的是不能修改state，不能
+    <br>返回修改后的state，返回啦也没效果。（好几次都是这里出毛病）用了switch 语句来匹配请求的type值，修改后再返回，强调不能返回修改后的state。有两种办法
     - copy 对象或者数组,返回copy之后的。
     - 先把state放前面，之后在替代前面的值或者增加值（如下面这样）
 
@@ -78,7 +80,8 @@
 
    let store = createStore(rootReducer)
 ```
-    3.返回了新的树形结构，但是redux 不会自动渲染，所以就要借助 react-redux ，来协助redux来重新渲染react页面或者组件。（重新渲染react只有state 和props，所以 react-redux 就模拟props变化来刷新页面）
+    3.返回了新的树形结构，但是redux 不会自动渲染，所以就要借助 react-redux ，来协助redux来重新渲染react页面或者组件。（重新渲染react只有state 和
+    <br>props，所以 react-redux 就模拟props变化来刷新页面）
 
     ```ruby
     import { Provider } from 'react-redux'
