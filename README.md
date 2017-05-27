@@ -113,3 +113,4 @@
      export default connect(mapStateToProps)(Listnews)
 
     ```
+    这里的state就是由 Provider 传过来的state。页面就会发生相应的变化。
